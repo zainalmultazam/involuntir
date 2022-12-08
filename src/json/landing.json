@@ -1,0 +1,84 @@
+{
+  "minicard": [
+    {
+      "id": 1,
+      "title": "Galang Dana",
+      "desc": "Buat galang dana dengan mudah",
+      "imgurl": "/icon/icon/landing-page/galang-dana.svg"
+    },
+    {
+      "id": 2,
+      "title": "Dotin",
+      "desc": "Donasi rutin tanpa rempong",
+      "imgurl": "/icon/icon/landing-page/dotin.svg"
+    },
+    {
+      "id": 3,
+      "title": "Dorang",
+      "desc": "Donasi barang semakin mudah",
+      "imgurl": "/icon/icon/landing-page/dorang.svg"
+    },
+    {
+      "id": 4,
+      "title": "Zakat",
+      "desc": "Bayar zakat bisa lebih mudah",
+      "imgurl": "/icon/icon/landing-page/dollar-circle.svg"
+    },
+    {
+      "id": 5,
+      "title": "Dorah",
+      "desc": "Bisa donor darah dengan cepat",
+      "imgurl": "/icon/icon/landing-page/drop.svg"
+    },
+    {
+      "id": 6,
+      "title": "Volunteer",
+      "desc": "Jadi bagian kegiatan volunteer",
+      "imgurl": "/icon/icon/landing-page/volunteer.svg"
+    }
+  ],
+  "kategori": [
+    {
+      "id": 1,
+      "title": "Panti Asuhan",
+      "imgurl": "/icon/icon/landing-page/panti.svg",
+      "object": "panti asuhan"
+    },
+    {
+      "id": 2,
+      "title": "Beasiswa & Pendidikan",
+      "imgurl": "/icon/icon/landing-page/beasiswa.svg",
+      "object": "beasiswa_pendidikan"
+    },
+    {
+      "id": 3,
+      "title": "Kemanusiaan",
+      "imgurl": "/icon/icon/landing-page/kemanusiaan.svg",
+      "object": "kemanusiaan"
+    },
+    {
+      "id": 4,
+      "title": "Kegiatan Sosial",
+      "imgurl": "/icon/icon/landing-page/gift.svg",
+      "object": "kegiatan sosial"
+    },
+    {
+      "id": 5,
+      "title": "Rumah Ibadah",
+      "imgurl": "/icon/icon/landing-page/building.svg",
+      "object": "rumah ibadah"
+    },
+    {
+      "id": 6,
+      "title": "Bencana Alam",
+      "imgurl": "/icon/icon/landing-page/bencana-alam.svg",
+      "object": "bencana alam"
+    },
+    {
+      "id": 7,
+      "title": "Kesehatan & Medis",
+      "imgurl": "/icon/icon/landing-page/hospital.svg",
+      "object": "kesehatan_medis"
+    }
+  ]
+}

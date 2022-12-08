@@ -1,0 +1,28 @@
+::-webkit-datetime-edit {   
+    padding: 3px;
+}
+::-webkit-datetime-edit-fields-wrapper {
+   background: transparent;
+    font-size: 16px;
+   position: relative;
+  left:15px;
+}
+::-webkit-datetime-edit-text {
+    font-size: 16px;
+ }
+::-webkit-datetime-edit-month-field {  }
+::-webkit-datetime-edit-day-field {  }
+::-webkit-datetime-edit-year-field {
+    z-index: 1; 
+   
+ }
+::-webkit-inner-spin-button { 
+    
+ }
+::-webkit-calendar-picker-indicator { 
+   
+    padding-left: 0px;
+    position: relative;
+    right: 17px;
+    top:1px
+}

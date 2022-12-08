@@ -1,0 +1,51 @@
+{
+  "pesan": [
+    {
+      "id": "1",
+      "title": "Transparansi",
+      "isi": "Prioritas kami menjaga keamanan dan kenyaman kamu dalam melakukan penggalang dana dan donasi. "
+    },
+    {
+      "id": "2",
+      "title": "Fitur Lengkap",
+      "isi": "Peduly memberikan kemudahan dengan banyak fitur. Kami juga terus berinovasi untuk merubah cara dunia memberi."
+    },
+    {
+      "id": "3",
+      "title": "Jangkauan Luas",
+      "isi": "Kami permudah ceritamu lebih menarik serta menyebarkan lebih luas lagi lewat email, sosial media, komunitas, dan platform lainnya. "
+    },
+    {
+      "id": "4",
+      "title": "Siap Melayani",
+      "isi": "Semua pertanyaan yang kamu ajukan itu penting. Itulah sebabnya kami terus berusaha memberikan respon yang tepat. "
+    }
+  ],
+  "dampak": [
+    {
+      "id": "1",
+      "jumlah": "350",
+      "judul": "Galang Dana"
+    },
+    {
+      "id": "2",
+      "jumlah": "12.000",
+      "judul": "Donatur"
+    },
+    {
+      "id": "3",
+      "jumlah": "342",
+      "judul": "Organisasi"
+    },
+    {
+      "id": "4",
+      "jumlah": "260",
+      "judul": "Perusahaan"
+    },
+    {
+      "id": "5",
+      "jumlah": "3.500",
+      "judul": "Relawan"
+    }
+  ]
+}

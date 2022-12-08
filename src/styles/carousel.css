@@ -1,0 +1,17 @@
+.dot {
+    height: 5px;
+    width: 5px;
+    background-color: #E4E4E4;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0px 3px;
+  }
+
+.bg-main{
+  background-image: url('https://images.unsplash.com/photo-1550592704-6c76defa9985?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+  .active-dot{
+    background-color: #E7513B;
+  }

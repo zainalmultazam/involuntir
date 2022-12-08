@@ -1,0 +1,28 @@
+.tab-details-wrapper {
+  overflow: hidden;
+}
+
+.tab-inner {
+  white-space: nowrap;
+}
+
+.tab-item {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  width: 500px;
+  border-radius: 15px;
+  padding-bottom: 70px;
+}
+
+.tab-item:nth-child(1n) {
+  margin-left: 0px;
+}
+
+.tab-item:nth-child(2n) {
+  margin-left: 0px;
+}
+
+.tab-item:nth-child(3n) {
+  margin-left: 0px;
+}
