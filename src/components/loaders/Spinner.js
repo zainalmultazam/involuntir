@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 function Spinner(props) {
-  const [color, setColor] = useState("#FFFFFF");
+  const [color, setColor] = useState('#FFFFFF')
   useEffect(() => {
     if (!props.color) {
-      setColor("#FFFFFF");
+      setColor('#FFFFFF')
     } else {
-      setColor(props.color);
+      setColor(props.color)
     }
-  }, [color]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [color]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       style={{
-        margin: "auto",
-        background: "none",
-        display: "block",
-        shapeRendering: "auto",
+        margin: 'auto',
+        background: 'none',
+        display: 'block',
+        shapeRendering: 'auto',
       }}
       width="40px"
       height="40px"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
     >
-      <circle cx={84} cy={50} r={10} fill={color}>
+      <circle cx={84} cy={50} r={10} fill={'#0288D1'}>
         <animate
           attributeName="r"
           repeatCount="indefinite"
@@ -42,11 +42,11 @@ function Spinner(props) {
           dur="1s"
           calcMode="discrete"
           keyTimes="0;0.25;0.5;0.75;1"
-          values={`${color}, ${color}, ${color}, ${color}, ${color}`}
+          values={`${'#0288D1'}, ${'#0288D1'}, ${'#0288D1'}, ${'#0288D1'}, ${'#0288D1'}`}
           begin="0s"
         />
       </circle>
-      <circle cx={16} cy={50} r={10} fill={color}>
+      <circle cx={16} cy={50} r={10} fill={'#0288D1'}>
         <animate
           attributeName="r"
           repeatCount="indefinite"
@@ -68,7 +68,7 @@ function Spinner(props) {
           begin="0s"
         />
       </circle>
-      <circle cx={50} cy={50} r={10} fill={color}>
+      <circle cx={50} cy={50} r={10} fill={'#0288D1'}>
         <animate
           attributeName="r"
           repeatCount="indefinite"
@@ -90,7 +90,7 @@ function Spinner(props) {
           begin="-0.25s"
         />
       </circle>
-      <circle cx={84} cy={50} r={10} fill={color}>
+      <circle cx={84} cy={50} r={10} fill={'#0288D1'}>
         <animate
           attributeName="r"
           repeatCount="indefinite"
@@ -112,7 +112,7 @@ function Spinner(props) {
           begin="-0.5s"
         />
       </circle>
-      <circle cx={16} cy={50} r={10} fill={color}>
+      <circle cx={16} cy={50} r={10} fill={'#0288D1'}>
         <animate
           attributeName="r"
           repeatCount="indefinite"
@@ -135,7 +135,7 @@ function Spinner(props) {
         />
       </circle>
     </svg>
-  );
+  )
 }
 
-export default Spinner;
+export default Spinner

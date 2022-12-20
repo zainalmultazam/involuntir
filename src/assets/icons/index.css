@@ -1,0 +1,18 @@
+@keyframes scaleChange {
+    20% {
+      transform: none
+    }
+    45%{
+      transform: scale(.95);
+    }
+    70%{
+      transform: scale(1);
+    }
+    100% {
+      transform: none
+    }
+  }
+  
+  .scaleChange {
+    animation: scaleChange .5s 1;
+  }

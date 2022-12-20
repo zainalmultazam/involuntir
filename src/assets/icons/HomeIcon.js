@@ -1,5 +1,8 @@
+import './index.css'
+
 const HomeIcon = (props) => (
   <svg
+    // className={props.active ? 'scaleChange' : ''}
     width="26"
     height="24"
     viewBox="0 0 26 24"

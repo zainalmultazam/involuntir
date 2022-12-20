@@ -46,6 +46,7 @@ function GalangDana() {
   useEffect(() => {
     if (dataGalangDana.data) {
       handleSetTitle(dataGalangDana.data.campaign[0].judul_campaign)
+      console.log(dataGalangDana.data.campaign[0].batas_waktu_campaign)
     }
     // clean up
     return () => handleSetTitle('Peduly')
@@ -147,7 +148,7 @@ function GalangDana() {
       />
       {popUp && (
         <div
-          className="mx-auto w-full h-full fixed z-30"
+          className="fixed z-30 w-full h-full mx-auto"
           style={{ background: 'rgb(111, 111, 111, 0.5)' }}
         ></div>
       )}
@@ -192,9 +193,9 @@ function GalangDana() {
                     e.target.onerror = null
                     e.target.src = '/images/no-picture.png'
                   }}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                 />
-                <div className="absolute top-0  w-full">
+                <div className="absolute top-0 w-full">
                   <div className="flex justify-between items-center h-[52px] mx-[20px]">
                     <Link
                       to={`/`}
@@ -346,7 +347,7 @@ function GalangDana() {
                     </svg>
                     {!like ? (
                       <div className="absolute w-full top-[31px]">
-                        <div className="flex justify-center items-center">
+                        <div className="flex items-center justify-center">
                           <svg
                             width="20"
                             height="18"
@@ -365,7 +366,7 @@ function GalangDana() {
                       </div>
                     ) : (
                       <div className="absolute w-full top-[31px]">
-                        <div className="flex justify-center items-center">
+                        <div className="flex items-center justify-center">
                           <svg
                             width="20"
                             height="18"
@@ -389,42 +390,21 @@ function GalangDana() {
               <div className="mx-[20px]">
                 <div className="inline-flex" style={{ paddingTop: '10px' }}>
                   <div className="  py-[3px] px-[10px] border border-peduly-primary rounded-full">
-                    <p className=" text-peduly-primary text-xs">
+                    <p className="text-xs text-peduly-primary">
                       {dataGalangDana.data.campaign[0].kategori_campaign}
                     </p>
                   </div>
                 </div>
-                <p className="text-peduly-dark font-medium mt-3 text-lg">
+                <p className="mt-3 text-lg font-medium text-peduly-dark">
                   {dataGalangDana.data.campaign[0].judul_campaign}
                 </p>
-                <p className="text-sm font-medium mb-[15px] mt-[14px]">
-                  <span className="font-medium text-lg text-peduly-primary">
-                    Rp{' '}
-                    {IdrFormat(
-                      parseInt(
-                        dataGalangDana.data.current_donation[0].current_donation
-                          ? dataGalangDana.data.current_donation[0]
-                              .current_donation
-                          : 0
-                      )
-                    )}{' '}
-                  </span>
-                  terkumpul dari Rp{' '}
-                  {IdrFormat(dataGalangDana.data.campaign[0].nominal_campaign)}
-                </p>
-                <ProgressBar
-                  current={
-                    dataGalangDana.data.current_donation[0].current_donation
-                  }
-                  target={dataGalangDana.data.campaign[0].nominal_campaign}
-                  waktu={dataGalangDana.data.campaign[0].batas_waktu_campaign}
-                />
                 <div className="flex justify-between mb-[23px] mt-[13px]">
                   <div className="flex items-center">
                     <People />
-                    <p className="font-medium ml-2 text-sm">
+                    <p className="ml-2 text-sm font-medium">
                       {dataGalangDana.data.jumlah_donatur.jumlah_donatur}
                       <span className="text-peduly-primary">+</span>
+                      Orang
                     </p>
                   </div>
                   <div>
@@ -440,10 +420,10 @@ function GalangDana() {
                     </div>
                   </div>
                 </div>
-                <hr className="hr-bold" />
+                <hr className="border-t-[0.5px] border-solid border-peduly-light" />
                 <div className="flex flex-col my-[24px]">
                   <h1 className="mb-[18px] text-sm font-normal">
-                    Penggalang dana
+                    Dibuat oleh:
                   </h1>
                   <div className="flex flex-row justify-between">
                     <div className="flex flex-row">
@@ -502,7 +482,7 @@ function GalangDana() {
                         />
                       )}
                       <div className="flex flex-col ml-[11px]">
-                        <p className="font-medium text-sm">
+                        <p className="text-sm font-medium">
                           {dataGalangDana.data.user[0].name}
                         </p>
                         <div className="flex flex-row font-medium text-xs items-center leading-[16px]">
@@ -518,19 +498,81 @@ function GalangDana() {
                     </div>
                   </div>
                 </div>
-                <hr className="hr-bold" />
-                <div className="my-[24px] font-medium text-sm">
-                  <button
-                    className="w-full border border-peduly-primary rounded-full py-[12px] text-peduly-primary"
-                    onClick={() => setPenggunaanDana(true)}
-                  >
-                    Rencana Penggunaan Dana
-                  </button>
-                </div>
               </div>
 
-              <hr className="border-b-[2px] border-[#E4E4E4]" />
-              <TabDetails
+              <hr className="border-t-[2px] border-solid border-peduly-light" />
+              <div className="flex-col px-5">
+                <div className="py-6 mt-[2px]">
+                  <h1 className="text-base text-peduly-dark font-semibold mb-[18px]">
+                    Detail
+                  </h1>
+                  <div
+                    className="text-sm font-normal text-diveduly-subtitle"
+                    dangerouslySetInnerHTML={{
+                      __html: `${dataGalangDana.data.campaign[0].detail_campaign}`,
+                    }}
+                  />
+                  {/* {dataGalangDana.data.campaign[0].detail_campaign} */}
+                  {/* </div> */}
+                </div>
+                <hr className="border-t-[1px] border-solid border-involuntir-light-1/2" />
+                <div className="py-6">
+                  <h1 className="text-base text-peduly-dark font-semibold mb-[18px]">
+                    Kategori
+                  </h1>
+                  <p className="text-base font-normal text-peduly-subtitle">
+                    Pendidikan & Literasi
+                  </p>
+                </div>
+                <hr className="border-t-[1px] border-solid border-involuntir-light-1/2" />
+                <div className="py-6">
+                  <h1 className="text-base text-peduly-dark font-semibold mb-[18px]">
+                    Waktu
+                  </h1>
+                  <p className="text-base font-normal text-peduly-subtitle">
+                    Aktivitas ini bersifat fleksibel
+                  </p>
+                </div>
+                <hr className="border-t-[1px] border-solid border-involuntir-light-1/2" />
+                <div className="py-6">
+                  <h1 className="text-base text-peduly-dark font-semibold mb-[18px]">
+                    Lokasi
+                  </h1>
+                  <p className="text-base font-normal text-peduly-subtitle">
+                    Dilakukan secara virtual
+                  </p>
+                </div>
+                <hr className="border-t-[1px] border-solid border-involuntir-light-1/2" />
+                <div className="py-6">
+                  <h1 className="text-base text-peduly-dark font-semibold mb-[18px]">
+                    Tugas
+                  </h1>
+                  <ul className="ml-5 text-base font-normal list-disc list-outside text-peduly-subtitle">
+                    <li>Mengajar Bahasa Inggris di yayasan</li>
+                    <li>Mengajar Bahasa Inggris di yayasan</li>
+                  </ul>
+                </div>
+                <hr className="border-t-[1px] border-solid border-involuntir-light-1/2" />
+                <div className="py-6">
+                  <h1 className="text-base text-peduly-dark font-semibold mb-[18px]">
+                    Kriteria
+                  </h1>
+                  <ul className="ml-5 text-base font-normal list-disc list-outside text-peduly-subtitle">
+                    <li>
+                      Komitmen selama 6 bulan dan mampu bekerja sama dengan tim
+                    </li>
+                    <li>
+                      Peduli dengan deadline dan mampu menentukan skala
+                      prioritas
+                    </li>
+                    <li>
+                      Bertanggung jawab dan peduli dengan isu sosial dan tim
+                    </li>
+                    <li>Terbuka untuk umum, minimal pelajar SMA</li>
+                  </ul>
+                </div>
+              </div>
+              {/* <TabDetails
                 details={dataGalangDana.data.campaign[0].detail_campaign}
                 doaDonatur={dataGalangDana.data.doa_donatur}
                 jumlahDonatur={
@@ -538,17 +580,6 @@ function GalangDana() {
                 }
                 kabarTerbaru={dataGalangDana.data.kabar_terbaru}
                 donatur={dataGalangDana.data.donatur}
-              />
-              {/* <TabDetailsAtas
-                details={dataGalangDana.data.campaign[0].detail_campaign}
-                doaDonatur={dataGalangDana.data.doa_donatur}
-                jumlahDonatur={
-                  dataGalangDana.data.jumlah_donatur.jumlah_donatur
-                }
-                donatur={dataGalangDana.data.donatur}
-              />
-              <TabDetailsBawah
-                kabarTerbaru={dataGalangDana.data.kabar_terbaru}
               /> */}
             </div>
           </div>

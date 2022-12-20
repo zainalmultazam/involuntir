@@ -37,7 +37,7 @@ const LupaPassword = () => {
   if (loading) {
     return (
       <div className="mx-auto max-w-[430px] h-screen flex items-center justify-center">
-        <Spinner color="#e7513b" />
+        <Spinner color="#0288D1" />
       </div>
     )
   }
@@ -56,7 +56,7 @@ const LupaPassword = () => {
           >
             <path
               d="M66.0001 106.85C62.7001 111.25 57.2999 111.25 53.9999 106.85L46.4999 96.85C45.6499 95.75 43.85 94.85 42.5 94.85H40C20 94.85 10 89.85 10 64.85V39.85C10 19.85 20 9.85001 40 9.85001H80C100 9.85001 110 19.85 110 39.85V64.85"
-              stroke="#E7513B"
+              stroke="#0288D1"
               strokeWidth={6}
               strokeMiterlimit={10}
               strokeLinecap="round"
@@ -64,35 +64,35 @@ const LupaPassword = () => {
             />
             <path
               d="M91.0001 107C99.8366 107 107 99.8365 107 91C107 82.1634 99.8366 75 91.0001 75C82.1635 75 75 82.1634 75 91C75 99.8365 82.1635 107 91.0001 107Z"
-              stroke="#E7513B"
+              stroke="#0288D1"
               strokeWidth={6}
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M110 110L105 105"
-              stroke="#E7513B"
+              stroke="#0288D1"
               strokeWidth={6}
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M79.9823 55H80.0272"
-              stroke="#E7513B"
+              stroke="#0288D1"
               strokeWidth={6}
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M59.9774 55H60.0223"
-              stroke="#E7513B"
+              stroke="#0288D1"
               strokeWidth={6}
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M39.9725 55H40.0174"
-              stroke="#E7513B"
+              stroke="#0288D1"
               strokeWidth={6}
               strokeLinecap="round"
               strokeLinejoin="round"

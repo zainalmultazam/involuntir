@@ -7,6 +7,33 @@ import IdrFormat from 'utils/IdrFormat'
 import { API_URL } from 'config/api'
 import SkeletonDonasi from '../../SkeletonLoading/SkeletonDonasi'
 
+const campaigns = [
+  {
+    id: 1,
+    slug: 'rumahzakat',
+    judul_campaign: 'Open recruitment anggota baru volunteer bach #20',
+    foto: '',
+    total_pendaftar: 103,
+    batas_waktu: 56,
+  },
+  {
+    id: 1,
+    slug: 'yayasanmuamalatindonesia',
+    judul_campaign: 'Campaign hari relawan sedunia',
+    foto: '',
+    total_pendaftar: 100,
+    batas_waktu: 56,
+  },
+  {
+    id: 1,
+    slug: 'dompetduafa',
+    judul_campaign: 'Kasi kampanye virtual: say no to pasung',
+    foto: '',
+    total_pendaftar: 90,
+    batas_waktu: 56,
+  },
+]
+
 export const Category = () => {
   const kategori = data.kategori
   const [itemKategori, setItemKategori] = useState([])
@@ -51,30 +78,27 @@ export const Category = () => {
 
   return (
     <div className="mt-[24px]">
-      <div className="flex justify-between mr-5">
+      <div className="flex justify-between mx-5">
         <div>
-          <p
-            style={{
-              fontSize: '18px',
-            }}
-            className="p-main"
-          >
-            Kategori Galang Dana
+          <p className="text-xl font-semibold text-peduly-dark">
+            Aktivitas Terpopuler
           </p>
         </div>
         <div className="flex items-center">
-          <Link to="/donasi/sekali">
-            <p className="text-peduly-primary text-basic">Lihat semua</p>
+          <Link to="/aktivitas">
+            <p className="text-peduly-primary text-basic font-semibold">
+              Lihat semua
+            </p>
           </Link>
         </div>
       </div>
 
-      <div className="overflow-mini-card p-main mx-0 py-[16px] pr-[20px]">
+      <div className="mx-5 overflow-x-scroll whitespace-nowrap py-[16px] pr-[20px]">
         {kategori.map((value) => (
           <button
             key={value.object}
             type="button"
-            className="btn-kategori hover:shadow-md inline-block"
+            className="h-[41px] py-[5px] px-[35px] border border-solid border-peduly-primary bg-white text-sm text-peduly-primary rounded-full mr-[10px] hover:shadow-md inline-block"
             onClick={() => ChangeCategory(value.object)}
           >
             <div className="flex flex-row content-center">
@@ -83,7 +107,7 @@ export const Category = () => {
                   marginRight: '10px',
                   width: '20px',
                 }}
-                src={`${API_URL}/${value.imgurl}`}
+                src={value.imgurl}
                 alt=""
               />
               {value.title}
@@ -96,7 +120,115 @@ export const Category = () => {
         style={{ marginTop: '10px', maxWidth: '430px' }}
         className="mx-[20px]"
       >
-        {!loading ? (
+        {campaigns.map((item) => (
+          <div key={item.id}>
+            <Link
+              to={{
+                pathname: `/aktivitas/detail`,
+              }}
+            >
+              <div className="grid grid-cols-9 gap-3 my-3">
+                <div className="col-span-3">
+                  <img
+                    src=""
+                    alt=""
+                    className="w-full h-full"
+                    style={{
+                      height: '120px',
+                      width: '120px',
+                      objectFit: 'cover',
+                      borderRadius: '15px',
+                    }}
+                    onError={(e) => {
+                      e.target.onerror = null
+                      e.target.src = '/images/involunter/defaultImage.png'
+                    }}
+                  />
+                </div>
+
+                <div className="col-span-6 ml-[6px]">
+                  <p className="line-clamp-2 text-left font-semibold text-base text-peduly-dark">
+                    {item.judul_campaign}
+                  </p>
+                  <div className="flex mt-3">
+                    <div className="flex">
+                      <svg
+                        className="mt-1"
+                        width="13"
+                        height="14"
+                        viewBox="0 0 13 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.62253 7.00001C8.43002 7.00001 9.89527 5.65686 9.89527 4.00001C9.89527 2.34315 8.43002 1 6.62253 1C4.81505 1 3.3498 2.34315 3.3498 4.00001C3.3498 5.65686 4.81505 7.00001 6.62253 7.00001Z"
+                          stroke="#212121"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12.2451 13C12.2451 10.678 9.72511 8.79999 6.62256 8.79999C3.52 8.79999 1 10.678 1 13"
+                          stroke="#212121"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p className="text-sm text-peduly-dark ml-[7px] leading-6">
+                        Pendaftar <br /> {item.total_pendaftar} Orang
+                      </p>
+                    </div>
+                    <div className="flex ml-6">
+                      <svg
+                        className="mt-1"
+                        width="12"
+                        height="14"
+                        viewBox="0 0 12 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.875 13C2.977 13 0.625 10.648 0.625 7.75C0.625 4.852 2.977 2.5 5.875 2.5C8.773 2.5 11.125 4.852 11.125 7.75"
+                          stroke="#212121"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M5.875 4.60001V7.60001"
+                          stroke="#212121"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.075 1H7.675"
+                          stroke="#212121"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M10.075 10V12.4"
+                          stroke="#212121"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.275 10V12.4"
+                          stroke="#212121"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p className="text-sm text-peduly-dark ml-[7px] leading-6">
+                        Batas Waktu <br /> {item.batas_waktu} Hari lagi
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
+        {/* {!loading ? (
           itemKategori.length <= 0 ? (
             <div className="h-[40px] text-center text-base">
               tidak ditemukan
@@ -187,7 +319,7 @@ export const Category = () => {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   )

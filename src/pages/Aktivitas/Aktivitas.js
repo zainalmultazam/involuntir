@@ -11,31 +11,25 @@ const items = [
     id: 1,
     slug: 'rumahzakat',
     judul_campaign: 'Open recruitment anggota baru volunteer bach #20',
-    foto: '',
-    total_donasi: 9000000,
-    current_donasi: 9000000,
-    nominal_campaign: 10200654,
-    batas_waktu_campaign: 56,
+    foto: 'defaultImage.png',
+    total_pendaftar: 103,
+    batas_waktu: 56,
   },
   {
     id: 1,
     slug: 'yayasanmuamalatindonesia',
     judul_campaign: 'Campaign hari relawan sedunia',
-    foto: '',
-    total_donasi: 9000000,
-    current_donasi: 9000000,
-    nominal_campaign: 10200654,
-    batas_waktu_campaign: 56,
+    foto: 'defaultImage.png',
+    total_pendaftar: 103,
+    batas_waktu: 56,
   },
   {
     id: 1,
     slug: 'dompetduafa',
     judul_campaign: 'Kasi kampanye virtual: say no to pasung',
-    foto: '',
-    total_donasi: 9000000,
-    current_donasi: 9000000,
-    nominal_campaign: 10200654,
-    batas_waktu_campaign: 56,
+    foto: 'defaultImage.png',
+    total_pendaftar: 103,
+    batas_waktu: 56,
   },
 ]
 
@@ -75,7 +69,7 @@ const Aktivitas = () => {
               <div className="grid grid-cols-9 gap-3 my-3">
                 <div className="col-span-3">
                   <img
-                    src={`images/images_campaign/${item.foto_campaign}`}
+                    src={`images/involunter/${item.foto_campaign}`}
                     alt=""
                     className="w-full h-full"
                     style={{
@@ -118,8 +112,8 @@ const Aktivitas = () => {
                           stroke-linejoin="round"
                         />
                       </svg>
-                      <p className="text-sm text-peduly-dark ml-[4px] leading-6">
-                        Pendaftar <br /> 103 Orang
+                      <p className="text-sm text-peduly-dark ml-[7px] leading-6">
+                        Pendaftar <br /> {item.total_pendaftar} Orang
                       </p>
                     </div>
                     <div className="flex ml-6">
@@ -163,8 +157,8 @@ const Aktivitas = () => {
                           stroke-linejoin="round"
                         />
                       </svg>
-                      <p className="text-sm text-peduly-dark ml-[4px] leading-6">
-                        Batas Waktu <br /> 63 Hari lagi
+                      <p className="text-sm text-peduly-dark ml-[7px] leading-6">
+                        Batas Waktu <br /> {item.batas_waktu} Hari lagi
                       </p>
                     </div>
                   </div>

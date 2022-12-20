@@ -46,7 +46,7 @@ const LogoutConfirmation = ({ onClickOutside, status }) => {
         style={{ maxWidth: '430px' }}
       >
         <div className="text-center my-[40px] mx-[36px]">
-          <h1 className="text-lg font-normal">Keluar dari Peduly</h1>
+          <h1 className="text-lg font-normal">Keluar dari Involunter</h1>
         </div>
         <div className="flex items-center justify-center pb-3 text-base font-normal">
           <button

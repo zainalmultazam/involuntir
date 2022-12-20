@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import data from '../../json/landing.json'
 
-const NavFilter = () => {
+const NavKategori = () => {
   const [click, setClick] = useState(false)
   const [tipeFilter, setTipeFilter] = useState('')
+
+  const kategori = data.kategori
 
   return (
     <div>
@@ -173,331 +176,19 @@ const NavFilter = () => {
           </div>
           {tipeFilter === 'Kategori' && (
             <div className="mx-[20px]">
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 22H22"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M17 2H7C4 2 3 3.79 3 6V22H21V6C21 3.79 20 2 17 2Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M14.06 15H9.92998C9.41998 15 8.98999 15.42 8.98999 15.94V22H14.99V15.94C15 15.42 14.58 15 14.06 15Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 6V11"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9.5 8.5H14.5"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">Kesehatan</p>
-              </div>
-              <hr />
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">Kemanusiaan</p>
-              </div>
-              <hr />
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.05 2.53001L4.03002 6.46001C2.10002 7.72001 2.10002 10.54 4.03002 11.8L10.05 15.73C11.13 16.44 12.91 16.44 13.99 15.73L19.98 11.8C21.9 10.54 21.9 7.73001 19.98 6.47001L13.99 2.54001C12.91 1.82001 11.13 1.82001 10.05 2.53001Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M5.63012 13.08L5.62012 17.77C5.62012 19.04 6.60012 20.4 7.80012 20.8L10.9901 21.86C11.5401 22.04 12.4501 22.04 13.0101 21.86L16.2001 20.8C17.4001 20.4 18.3801 19.04 18.3801 17.77V13.13"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M21.3999 15V9"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">Pendidikan</p>
-              </div>
-              <hr />
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 21.6091H22"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2.9502 21.6092L3.00019 9.79287C3.00019 9.19371 3.2902 8.62406 3.7702 8.25081L10.7702 2.89763C11.4902 2.34758 12.5002 2.34758 13.2302 2.89763L20.2302 8.24098C20.7202 8.61423 21.0002 9.18388 21.0002 9.79287V21.6092"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M13 16.698H11C10.17 16.698 9.5 17.356 9.5 18.1713V21.6091H14.5V18.1713C14.5 17.356 13.83 16.698 13 16.698Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9.5 13.5057H7.5C6.95 13.5057 6.5 13.0637 6.5 12.5235V11.0501C6.5 10.5099 6.95 10.0679 7.5 10.0679H9.5C10.05 10.0679 10.5 10.5099 10.5 11.0501V12.5235C10.5 13.0637 10.05 13.5057 9.5 13.5057Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M16.4998 13.5057H14.4998C13.9498 13.5057 13.4998 13.0637 13.4998 12.5235V11.0501C13.4998 10.5099 13.9498 10.0679 14.4998 10.0679H16.4998C17.0498 10.0679 17.4998 10.5099 17.4998 11.0501V12.5235C17.4998 13.0637 17.0498 13.5057 16.4998 13.5057Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M19.0001 6.87564L18.9701 3.92894H14.5701"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">Panti Asuhan</p>
-              </div>
-              <hr />
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19.97 10H3.96997V18C3.96997 21 4.96997 22 7.96997 22H15.97C18.97 22 19.97 21 19.97 18V10Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M21.5 6.99998V7.99998C21.5 9.09998 20.97 9.99998 19.5 9.99998H4.5C2.97 9.99998 2.5 9.09998 2.5 7.99998V6.99998C2.5 5.89998 2.97 4.99998 4.5 4.99998H19.5C20.97 4.99998 21.5 5.89998 21.5 6.99998Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M11.64 5.00002H6.12003C5.78003 4.63002 5.79003 4.06002 6.15003 3.70002L7.57003 2.28002C7.94003 1.91002 8.55003 1.91002 8.92003 2.28002L11.64 5.00002Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M17.8699 5.00002H12.3499L15.0699 2.28002C15.4399 1.91002 16.0499 1.91002 16.4199 2.28002L17.8399 3.70002C18.1999 4.06002 18.2099 4.63002 17.8699 5.00002Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M8.93994 10V15.14C8.93994 15.94 9.81994 16.41 10.4899 15.98L11.4299 15.36C11.7699 15.14 12.1999 15.14 12.5299 15.36L13.4199 15.96C14.0799 16.4 14.9699 15.93 14.9699 15.13V10H8.93994Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">
-                  Kegiatan Sosial
-                </p>
-              </div>
-              <hr />
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12.5 22.0001H4.07997C2.91997 22.0001 1.96997 21.0701 1.96997 19.9301V5.09011C1.96997 2.47011 3.91997 1.2801 6.30997 2.4501L10.75 4.63011C11.71 5.10011 12.5 6.3501 12.5 7.4101V22.0001Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M21.97 15.0601V18.8401C21.97 21.0001 20.97 22.0001 18.81 22.0001H12.5V10.4201L12.97 10.5201L17.47 11.5301L19.5 11.9801C20.82 12.2701 21.9 12.9501 21.96 14.8701C21.97 14.9301 21.97 14.9901 21.97 15.0601Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M5.5 9.00009H8.97"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M5.5 13.0001H8.97"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M17.47 11.5301V14.7501C17.47 15.9901 16.46 17.0001 15.22 17.0001C13.98 17.0001 12.97 15.9901 12.97 14.7501V10.5201L17.47 11.5301Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M21.96 14.8701C21.9 16.0501 20.92 17.0001 19.72 17.0001C18.48 17.0001 17.47 15.9901 17.47 14.7501V11.5301L19.5 11.9801C20.82 12.2701 21.9 12.9501 21.96 14.8701Z"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">Rumah Ibadah</p>
-              </div>
-              <hr />
-              <div className="flex items-center py-[18px]">
-                <span className="ml-[10px]">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 13.1L4.5 11.6C6.04 10.68 7.96 10.68 9.5 11.6C11.04 12.52 12.96 12.52 14.5 11.6C16.04 10.68 17.96 10.68 19.5 11.6L22 13.1"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 3.89999L4.5 5.39999C6.04 6.31999 7.96 6.31999 9.5 5.39999C11.04 4.47999 12.96 4.47999 14.5 5.39999C16.04 6.31999 17.96 6.31999 19.5 5.39999L22 3.89999"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 20.1L4.5 18.6C6.04 17.68 7.96 17.68 9.5 18.6C11.04 19.52 12.96 19.52 14.5 18.6C16.04 17.68 17.96 17.68 19.5 18.6L22 20.1"
-                      stroke="#E7513B"
-                      strokeWidth="1.5"
-                      strokeMiterlimit={10}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <p className="ml-[18px] font-normal text-base">Bencana Alam</p>
-              </div>
-              <hr />
+              {kategori.map((value) => (
+                <div key={value.id}>
+                  <div className="flex items-center py-[18px]">
+                    <span className="ml-[10px]">
+                      <img className="w-6 h-6" src={value.imgurl} alt="" />
+                    </span>
+                    <p className="ml-[18px] font-normal text-base">
+                      {value.title}
+                    </p>
+                  </div>
+                  <hr />
+                </div>
+              ))}
             </div>
           )}
           {tipeFilter === 'Urutkan' && (
@@ -538,4 +229,4 @@ const NavFilter = () => {
   )
 }
 
-export default NavFilter
+export default NavKategori

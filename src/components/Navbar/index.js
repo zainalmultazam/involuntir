@@ -20,24 +20,16 @@ export default function NavLink() {
   }
 
   return (
-    <div className="fixed z-20">
+    <div className="fixed z-50">
       <div
-        className="navbar flex justify-around items-center max-w-[430px] py-5"
+        className="navbar flex justify-around items-center max-w-[430px] py-5 border-t-[1px] border-solid border-peduly-light"
         onClick={rmSlug}
       >
         <Link to={'/'}>
           <HomeIcon active={pathName === '/' ? true : false} />
         </Link>
-        <Link to={'/donasi/sekali'}>
-          <ChecklistIcon
-            active={
-              pathName === '/donasi/sekali' ||
-              pathName === '/donasi/rutin' ||
-              pathName === '/donasi/barang'
-                ? true
-                : false
-            }
-          />
+        <Link to={'/aktivitas'}>
+          <ChecklistIcon active={pathName === '/aktivitas' ? true : false} />
         </Link>
         {!getToken() ? (
           <Link to="/login">

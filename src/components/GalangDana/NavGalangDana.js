@@ -33,7 +33,63 @@ const NavGalangDana = ({ slug, judul, details, donasi, expired, clk }) => {
 
   return (
     <div>
-      <div className="fixed bottom-0 w-full h-[72px] bg-white flex justify-center items-center max-w-[430px] z-40 shadow-sm">
+      <div className="fixed bottom-0 w-full h-[72px] bg-white max-w-[430px] px-5 grid grid-cols-2 gap-3 z-40 shadow-sm">
+        <div className="flex">
+          <div
+            className="flex flex-grow items-center justify-center w-[46px] h-[54px]  rounded-full bg-peduly-light cursor-pointer"
+            onClick={() => {
+              setClick(!click)
+              clk(!click)
+            }}
+          >
+            <svg
+              width="16"
+              height="18"
+              viewBox="0 0 16 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.6666 5.66679C13.9552 5.66679 14.9999 4.62212 14.9999 3.33346C14.9999 2.04479 13.9552 1.00012 12.6666 1.00012C11.3779 1.00012 10.3333 2.04479 10.3333 3.33346C10.3333 4.62212 11.3779 5.66679 12.6666 5.66679Z"
+                stroke="#717171"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3.33327 10.7779C4.62194 10.7779 5.66661 9.7332 5.66661 8.44454C5.66661 7.15587 4.62194 6.11121 3.33327 6.11121C2.04461 6.11121 0.999939 7.15587 0.999939 8.44454C0.999939 9.7332 2.04461 10.7779 3.33327 10.7779Z"
+                stroke="#717171"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12.6666 16.5556C13.9552 16.5556 14.9999 15.5109 14.9999 14.2222C14.9999 12.9336 13.9552 11.8889 12.6666 11.8889C11.3779 11.8889 10.3333 12.9336 10.3333 14.2222C10.3333 15.5109 11.3779 16.5556 12.6666 16.5556Z"
+                stroke="#717171"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5.3479 9.95227L10.6601 13.0478"
+                stroke="#717171"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M10.6523 4.50769L5.3479 7.60325"
+                stroke="#717171"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <p className="ml-2 text-base text-semibold text-merchant-subtitle">
+              Bagikan
+            </p>
+          </div>
+        </div>
         {!expired ? (
           <Link
             to={
@@ -41,11 +97,12 @@ const NavGalangDana = ({ slug, judul, details, donasi, expired, clk }) => {
                 ? `/donasi-sekali/${slug}/jumlah-donasi`
                 : `/donasi-rutin/${slug}/jumlah-donasi`
             }
-            className="w-[75%]"
           >
-            <button className="bg-peduly-primary  text-white font-bold w-full max-w-[312px]  text-[16px] rounded-full py-[15px]">
-              Donasi Sekarang
-            </button>
+            <div className="flex">
+              <button className="flex-grow bg-peduly-primary text-white font-bold w-full text-base rounded-full py-[15px]">
+                Jadi Volunteer
+              </button>
+            </div>
           </Link>
         ) : (
           <div className="w-[75%]">
@@ -54,58 +111,6 @@ const NavGalangDana = ({ slug, judul, details, donasi, expired, clk }) => {
             </button>
           </div>
         )}
-
-        <div
-          className="flex items-center justify-center w-[46px] h-[46px]  rounded-full bg-[#FCAE03] ml-[16px] cursor-pointer"
-          onClick={() => {
-            setClick(!click)
-            clk(!click)
-          }}
-        >
-          <svg
-            width="16"
-            height="18"
-            viewBox="0 0 16 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12.6666 5.66679C13.9552 5.66679 14.9999 4.62212 14.9999 3.33346C14.9999 2.04479 13.9552 1.00012 12.6666 1.00012C11.3779 1.00012 10.3333 2.04479 10.3333 3.33346C10.3333 4.62212 11.3779 5.66679 12.6666 5.66679Z"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M3.33327 10.7779C4.62194 10.7779 5.66661 9.7332 5.66661 8.44454C5.66661 7.15587 4.62194 6.11121 3.33327 6.11121C2.04461 6.11121 0.999939 7.15587 0.999939 8.44454C0.999939 9.7332 2.04461 10.7779 3.33327 10.7779Z"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M12.6666 16.5556C13.9552 16.5556 14.9999 15.5109 14.9999 14.2222C14.9999 12.9336 13.9552 11.8889 12.6666 11.8889C11.3779 11.8889 10.3333 12.9336 10.3333 14.2222C10.3333 15.5109 11.3779 16.5556 12.6666 16.5556Z"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M5.3479 9.95227L10.6601 13.0478"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M10.6523 4.50769L5.3479 7.60325"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
       </div>
       {click && (
         <div className="w-full h-full fixed bg-white z-50 max-w-[430px] overflow-x-hidden overflow-y-auto no-scrollbar">

@@ -232,7 +232,7 @@ const Daftar = () => {
               Daftar
             </button>
           </form>
-          <div className="my-16">
+          <div className="mt-16">
             <p className="text-center text-[#717171] text-[14px] font-normal">
               Atau daftar dengan
             </p>
@@ -243,7 +243,7 @@ const Daftar = () => {
             </div> */}
             <GoogleLogin />
           </div>
-          <div className="text-center mb-20 mt-10 text-[12px]">
+          <div className="text-center mb-20 text-[12px]">
             <p>Dengan mendaftar, kamu setuju dengan</p>
             <p>
               <a

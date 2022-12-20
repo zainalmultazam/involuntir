@@ -59,6 +59,8 @@ import Search from 'pages/Search'
 import ProfileDonasi from 'pages/Donasi/Profile/Donasi'
 import Aktivitas from 'pages/Aktivitas/Aktivitas'
 import DetailAktivitas from 'pages/Aktivitas/DetailAktivitas'
+import NewProfille from 'pages/Profile/NewProfille'
+import NewPengaturan from 'pages/Profile/Pengaturan/NewPengaturan'
 
 function App() {
   useAnalyticsEventTracker()
@@ -94,9 +96,11 @@ function App() {
         <Route exact path="/donasi/:slug" component={Donasi} />
         <Route exact path="/panduan" component={Panduan} />
         <Route exact path="/biaya" component={Biaya} />
-        {/* Profile Donasi */}
+        {/* profile involunter */}
+        <Route exact path="/newprofile" component={NewProfille} />
         <Route exact path="/donasi" component={ProfileDonasi} />
-        {/* Aktivitas */}
+        <Route exact path="/newpengaturan" component={NewPengaturan} />
+        {/* Aktivitas involunter */}
         <Route exact path="/aktivitas" component={Aktivitas} />
         <Route exact path="/aktivitas/detail" component={DetailAktivitas} />
         {/* SUPPORTER */}

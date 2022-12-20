@@ -39,7 +39,7 @@ function TabStep({ step }) {
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `text-peduly-primary`
-              : `text-[#717171]`)
+              : `text-peduly-subtitle`)
           }
         >
           Penerima
@@ -54,7 +54,7 @@ function TabStep({ step }) {
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `bg-peduly-primary`
-              : `bg-[#E4E4E4]`)
+              : `bg-peduly-light`)
           }
         />
       </div>
@@ -62,14 +62,14 @@ function TabStep({ step }) {
       <div className=" flex flex-col items-center mr-[6px]">
         <p
           className={
-            `text-base text-[#717171] mb-[9px] ` +
+            `text-base text-peduly-subtitle mb-[9px] ` +
             (step === 'target' ||
             step === 'judul' ||
             step === 'deskripsi' ||
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `text-peduly-primary`
-              : `text-[#717171]`)
+              : `text-peduly-subtitle`)
           }
         >
           Target
@@ -83,7 +83,7 @@ function TabStep({ step }) {
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `bg-peduly-primary`
-              : `bg-[#E4E4E4]`)
+              : `bg-peduly-light`)
           }
         />
       </div>
@@ -91,13 +91,13 @@ function TabStep({ step }) {
       <div className=" flex flex-col items-center mr-[6px]">
         <p
           className={
-            `text-base text-[#717171] mb-[9px] ` +
+            `text-base text-peduly-subtitle mb-[9px] ` +
             (step === 'judul' ||
             step === 'deskripsi' ||
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `text-peduly-primary`
-              : `text-[#717171]`)
+              : `text-peduly-subtitle`)
           }
         >
           Judul
@@ -110,7 +110,7 @@ function TabStep({ step }) {
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `bg-peduly-primary`
-              : `bg-[#E4E4E4]`)
+              : `bg-peduly-light`)
           }
         />
       </div>
@@ -118,12 +118,12 @@ function TabStep({ step }) {
       <div className=" flex flex-col items-center mr-[6px]">
         <p
           className={
-            `text-base text-[#717171] mb-[9px] ` +
+            `text-base text-peduly-subtitle mb-[9px] ` +
             (step === 'deskripsi' ||
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `text-peduly-primary`
-              : `text-[#717171]`)
+              : `text-peduly-subtitle`)
           }
         >
           Deskripsi
@@ -135,7 +135,7 @@ function TabStep({ step }) {
             step === 'previewCerita' ||
             step === 'ajakan'
               ? `bg-peduly-primary`
-              : `bg-[#E4E4E4]`)
+              : `bg-peduly-light`)
           }
         />
       </div>
@@ -143,10 +143,10 @@ function TabStep({ step }) {
       <div className=" flex flex-col items-center mr-[6px]">
         <p
           className={
-            `text-base text-[#717171] mb-[9px] ` +
+            `text-base text-peduly-subtitle mb-[9px] ` +
             (step === 'previewCerita' || step === 'ajakan'
               ? `text-peduly-primary`
-              : `text-[#717171]`)
+              : `text-peduly-subtitle`)
           }
         >
           Preview
@@ -156,7 +156,7 @@ function TabStep({ step }) {
             `w-[100px] h-[4px] rounded ` +
             (step === 'previewCerita' || step === 'ajakan'
               ? `bg-peduly-primary`
-              : `bg-[#E4E4E4]`)
+              : `bg-peduly-light`)
           }
         />
       </div>
@@ -164,8 +164,8 @@ function TabStep({ step }) {
       <div className=" flex flex-col items-center">
         <p
           className={
-            `text-base text-[#717171] mb-[9px] ` +
-            (step === 'ajakan' ? `text-peduly-primary` : `text-[#717171]`)
+            `text-base text-peduly-subtitle mb-[9px] ` +
+            (step === 'ajakan' ? `text-peduly-primary` : `text-peduly-subtitle`)
           }
         >
           Ajakan
@@ -173,7 +173,7 @@ function TabStep({ step }) {
         <hr
           className={
             `w-[100px] h-[4px] rounded ` +
-            (step === 'ajakan' ? `bg-peduly-primary` : `bg-[#E4E4E4]`)
+            (step === 'ajakan' ? `bg-peduly-primary` : `bg-peduly-light`)
           }
         />
       </div>

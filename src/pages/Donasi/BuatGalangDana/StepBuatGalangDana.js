@@ -29,12 +29,15 @@ function StepBuatGalangDana() {
   }
 
   return (
-    <div style={{ maxWidth: '430px' }} className={`mx-auto pt-[24px] `}>
+    <div
+      style={{ maxWidth: '430px' }}
+      className={`mx-auto pt-[24px] bg-involuntir-light-1/3`}
+    >
       {step !== 'ringkasan' && <TabStep step={step} />}
       {step === 'tujuan' && (
-        <TujuanGalangDana
+        <JudulGalangDana
           setStep={setStep}
-          data={setTujuanGalangDana}
+          data={setJudulGalangDana}
           state={data}
         />
       )}

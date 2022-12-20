@@ -1,11 +1,43 @@
 import { useState, useEffect } from 'react'
+import Select from 'react-select'
+
+import './index.css'
+
+const kota = [
+  { value: '1', label: 'Jakarta' },
+  { value: '2', label: 'Bandung' },
+  { value: '3', label: 'Surabaya' },
+]
+
+const options = [
+  { value: '1', label: '30 hari' },
+  { value: '2', label: '60 hari' },
+  { value: '3', label: '120 hari' },
+  { value: '4', label: 'Kustom' },
+]
 
 function JudulGalangDana({ setStep, data, state }) {
+  const option = options.find((option) => option.label === state.target.waktu)
+  const optionKota = kota.find(
+    (option) => option.label === state.penerima.lokasi
+  )
+
   const [judul, setJudul] = useState(state.judul.judul ? state.judul.judul : '')
+  const [detail, setDetail] = useState(
+    state.target.detail ? state.target.detail : ''
+  )
+  const [waktu, setWaktu] = useState(
+    state.target.waktu ? state.target.waktu : ''
+  )
+  const [lokasi, setLokasi] = useState(optionKota ? optionKota.label : '')
+  const [lokasi2, setLokasi2] = useState(
+    state.target.lokasi2 ? state.target.lokasi2 : ''
+  )
   const [slug, setSlug] = useState(state.judul.slug ? state.judul.slug : '')
   const [image1, setImage1] = useState(
     state.judul.image?.image1 ? state.judul.image.image1 : ''
   )
+  const [checklist, setChecklist] = useState(option ? option.value : '')
   const [image2, setImage2] = useState(
     state.judul.image?.image2 ? state.judul.image.image2 : ''
   )
@@ -43,6 +75,37 @@ function JudulGalangDana({ setStep, data, state }) {
     })
   }
 
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px solid #BEBEBE',
+      color: state.isSelected ? 'white' : 'black',
+      backgroundColor: state.isSelected ? '#0288D1' : 'white',
+    }),
+    control: (provided) => ({
+      ...provided,
+      height: '60px',
+      paddingLeft: 20,
+      paddingRight: 20,
+      borderRadius: 30,
+      marginTop: 14,
+      borderColor: 'rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 !important',
+      '&:hover': {
+        outline: 'none !important',
+      },
+      '&:focus': {
+        outline: 'auto 2px Highlight !important',
+      },
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1
+      const transition = 'opacity 300ms'
+
+      return { ...provided, opacity, transition }
+    },
+  }
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   }, [])
@@ -73,23 +136,120 @@ function JudulGalangDana({ setStep, data, state }) {
   }
 
   return (
-    <div className="py-[20px]">
+    <div className="py-6 bg-white rounded-t-[30px] mt-6">
       {/* JUDUL */}
-      <div className="mx-[20px] mt-[14px]">
-        <h1 className="text-large font-medium">Judul galang dana ini</h1>
+      <div className="mx-[20px]">
+        <h1 className="text-large font-medium">Judul Aktivitas</h1>
         <input
           type="text"
           className="outline-none border-[#E4E4E4] focus:ring-0 focus:border-[#E4E4E4] w-full border-[1px] rounded-[30px] p-[20px] text-large font-normal placeholder-[#C4C4C4] mt-[14px]"
-          placeholder="Contoh: sedekah untk 50 anak"
+          placeholder="Open Recruitment"
           value={judul}
           onChange={(e) => {
             setJudul(e.target.value)
           }}
         />
       </div>
+      {/* Detail */}
+      <div className="mx-[20px] mt-[24px]">
+        <h1 className="text-large font-medium">Detail</h1>
+        <p className="text-sm font-normal text-[#717171] mt-[4px]">
+          Ceritakan secara detail rencana penggunaan dana yang didapat dari
+          galang dana ini
+        </p>
+        <textarea
+          className="outline-none border-[#E4E4E4] focus:ring-0 focus:border-[#E4E4E4] w-full h-[157px] border-[1px] rounded-[30px] p-[20px] text-large font-normal placeholder-[#C4C4C4] resize-none  mt-[14px]"
+          placeholder="Contoh: biaya bangunan Rp2.00.000, biaya tukang Rp10.300.000"
+          value={detail}
+          onChange={(e) => {
+            setDetail(e.target.value)
+          }}
+        >
+          detail
+        </textarea>
+      </div>
+      {/* waktu */}
+      <div className="mx-[20px] mt-[14px]">
+        <h1 className="text-large font-medium">Waktu</h1>
+        <input
+          type="text"
+          className="outline-none border-[#E4E4E4] focus:ring-0 focus:border-[#E4E4E4] w-full border-[1px] rounded-[30px] p-[20px] text-large font-normal placeholder-[#C4C4C4] mt-[14px]"
+          placeholder="Open Recruitment"
+          value={waktu}
+          onChange={(e) => {
+            setWaktu(e.target.value)
+          }}
+        />
+      </div>
+      {/* LOKASI */}
+      <div className="mx-[20px] mt-[24px]">
+        <h1 className="text-large font-medium">Pilih Lokasi</h1>
+        <Select
+          placeholder="Pilih lokasi"
+          value={kota.value === null ? '' : kota.value}
+          styles={customStyles}
+          defaultValue={kota[Number(optionKota ? optionKota.value : 0) - 1]}
+          noOptionsMessage={() => 'Lokasi Tidak Ditemukan :('}
+          options={kota}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
+          isSearchable={false}
+          onChange={(e) => {
+            setLokasi(e.label)
+          }}
+        />
+        <input
+          type="text"
+          className="outline-none border-[#E4E4E4] focus:ring-0 focus:border-[#E4E4E4] w-full border-[1px] rounded-[30px] p-[20px] text-large font-normal placeholder-[#C4C4C4] mt-4"
+          placeholder="Open Recruitment"
+          value={lokasi2}
+          onChange={(e) => {
+            setLokasi2(e.target.value)
+          }}
+        />
+      </div>
+      {/* tugas */}
+      <div className="mx-[20px] mt-[24px]">
+        <h1 className="text-large font-medium">Tugas</h1>
+        <Select
+          placeholder="Pilih lokasi"
+          value={kota.value === null ? '' : kota.value}
+          styles={customStyles}
+          defaultValue={kota[Number(optionKota ? optionKota.value : 0) - 1]}
+          noOptionsMessage={() => 'Lokasi Tidak Ditemukan :('}
+          options={kota}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
+          isSearchable={false}
+          onChange={(e) => {
+            setLokasi(e.label)
+          }}
+        />
+      </div>
+      {/* kriteria */}
+      <div className="mx-[20px] mt-[24px]">
+        <h1 className="text-large font-medium">Kriteria</h1>
+        <Select
+          placeholder="Pilih lokasi"
+          value={kota.value === null ? '' : kota.value}
+          styles={customStyles}
+          defaultValue={kota[Number(optionKota ? optionKota.value : 0) - 1]}
+          noOptionsMessage={() => 'Lokasi Tidak Ditemukan :('}
+          options={kota}
+          components={{
+            IndicatorSeparator: () => null,
+          }}
+          isSearchable={false}
+          onChange={(e) => {
+            setLokasi(e.label)
+          }}
+        />
+      </div>
       {/* LINK SLUG */}
       <div className="mx-[20px] mt-[24px]">
-        <h1 className="text-large font-medium">Buat link untuk galang dana</h1>
+        <h1 className="text-large font-medium">Buat Custom Link</h1>
         <p className="text-sm font-normal text-[#717171] mt-[4px]">
           Link harus dimulai dengan huruf, tanpa spasi (opsional)
         </p>
@@ -102,19 +262,136 @@ function JudulGalangDana({ setStep, data, state }) {
               htmlFor="slug"
               className="text-base font-normal text-[#212121]"
             >
-              peduly.com/
+              involuntir.com/
             </label>
           </span>
           <input
             type="text"
             id="slug"
-            className="outline-none focus:ring-0  w-full text-large font-normal placeholder-[#C4C4C4] pl-[10px]"
-            placeholder="Contoh: bantuprima"
+            className="outline-none border-0 w-full text-large font-normal placeholder-[#C4C4C4] pl-[10px] focus:ring-transparent focus:ring-0 focus:ring-opacity-0 focus:ring-offset-0"
+            placeholder="Contoh: opreckejarmimpi"
             value={slug}
             onChange={(e) => {
               setSlug(e.target.value)
             }}
           />
+        </div>
+      </div>
+      {/* DURASI */}
+      <div className="mx-[20px] mt-[24px]">
+        <h1 className="text-large font-medium">Durasi galang dana</h1>
+        <div className="grid grid-cols-2 gap-4 mt-[14px]">
+          <label forhtml="durasi-1">
+            <div
+              className={`rounded-[30px] p-[20px] cursor-pointer  mr-[20px] w-full flex flex-row justify-between items-center drop-shadow ${
+                checklist === options[0].value
+                  ? `bg-involuntir-bgicon border-[1px] border-peduly-primary`
+                  : `bg-white border-[1px]`
+              }`}
+            >
+              <p
+                className={`text-large font-normal ${
+                  checklist === options[0].value
+                    ? `text-[#212121]`
+                    : `text-[#717171]`
+                }`}
+              >
+                30 Hari
+              </p>
+              <input
+                type="checkbox"
+                name="durasi"
+                id="durasi-1"
+                checked={checklist === options[0].value}
+                className="rounded-full text-peduly-primary input-custom focus:ring-transparent focus:ring-0 focus:ring-opacity-0 focus:ring-offset-0"
+                onChange={() => setChecklist(options[0].value)}
+              />
+              {/* <input type="checkbox" name="" className="input-custom" checked /> */}
+            </div>
+          </label>
+          <label forhtml="durasi-2">
+            <div
+              className={`rounded-[30px] p-[20px] cursor-pointer  mr-[20px] w-full flex flex-row justify-between items-center drop-shadow ${
+                checklist === options[1].value
+                  ? `bg-involuntir-bgicon border-[1px] border-peduly-primary`
+                  : `bg-white border-[1px]`
+              }`}
+            >
+              <p
+                className={`text-large font-normal ${
+                  checklist === options[1].value
+                    ? `text-[#212121]`
+                    : `text-[#717171]`
+                }`}
+              >
+                60 Hari
+              </p>
+              <input
+                type="checkbox"
+                name="durasi"
+                id="durasi-2"
+                checked={checklist === options[1].value}
+                className="rounded-full text-peduly-primary input-custom focus:ring-transparent focus:ring-0 focus:ring-opacity-0 focus:ring-offset-0"
+                onChange={() => setChecklist(options[1].value)}
+              />
+            </div>
+          </label>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mt-[14px]">
+          <label forhtml="durasi-3">
+            <div
+              className={`rounded-[30px] p-[20px] cursor-pointer  mr-[20px] w-full flex flex-row justify-between items-center drop-shadow ${
+                checklist === options[2].value
+                  ? `bg-involuntir-bgicon border-[1px] border-peduly-primary`
+                  : `bg-white border-[1px]`
+              }`}
+            >
+              <p
+                className={`text-large font-normal ${
+                  checklist === options[2].value
+                    ? `text-[#212121]`
+                    : `text-[#717171]`
+                }`}
+              >
+                120 Hari
+              </p>
+              <input
+                type="checkbox"
+                name="durasi"
+                id="durasi-3"
+                checked={checklist === options[2].value}
+                className="rounded-full text-peduly-primary input-custom focus:ring-transparent focus:ring-0 focus:ring-opacity-0 focus:ring-offset-0"
+                onChange={() => setChecklist(options[2].value)}
+              />
+            </div>
+          </label>
+          <label forhtml="durasi-4">
+            <div
+              className={`rounded-[30px] p-[20px] cursor-pointer  mr-[20px] w-full flex flex-row justify-between items-center drop-shadow ${
+                checklist === options[3].value
+                  ? `bg-involuntir-bgicon border-[1px] border-peduly-primary`
+                  : `bg-white border-[1px]`
+              }`}
+            >
+              <p
+                className={`text-large font-normal ${
+                  checklist === options[3].value
+                    ? `text-[#212121]`
+                    : `text-[#717171]`
+                }`}
+              >
+                Kustom
+              </p>
+              <input
+                type="checkbox"
+                name="durasi"
+                id="durasi-4"
+                checked={checklist === options[3].value}
+                className="rounded-full text-peduly-primary input-custom focus:ring-transparent focus:ring-0 focus:ring-opacity-0 focus:ring-offset-0"
+                onChange={() => setChecklist(options[3].value)}
+              />
+            </div>
+          </label>
         </div>
       </div>
       {/* BANNER */}
@@ -146,19 +423,19 @@ function JudulGalangDana({ setStep, data, state }) {
                   >
                     <path
                       d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M8 12H16"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M12 16V8"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -194,19 +471,19 @@ function JudulGalangDana({ setStep, data, state }) {
                   >
                     <path
                       d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M8 12H16"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M12 16V8"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -242,19 +519,19 @@ function JudulGalangDana({ setStep, data, state }) {
                   >
                     <path
                       d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M8 12H16"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M12 16V8"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -290,19 +567,19 @@ function JudulGalangDana({ setStep, data, state }) {
                   >
                     <path
                       d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M8 12H16"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M12 16V8"
-                      stroke="#E7513B"
+                      stroke="#0288D1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />

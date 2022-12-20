@@ -96,20 +96,6 @@ function DetailAktivitas() {
     })
   }
 
-  // const checkOwnerGalangDana = async () => {
-  //   await axios
-  //     .get(`${API_URL}/api/galangdanasaya`)
-  //     .then((res) => {
-  //       console.log(res);
-  //       if (res.data.status === 200) {
-  //         setOwnerGalangDana(true);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   function dayToGo(TargetDay) {
     const firstDate = new Date(TargetDay)
     if (!isNaN(firstDate.getTime())) {
@@ -133,7 +119,7 @@ function DetailAktivitas() {
 
   return !loading ? (
     <div>
-      <MetaDataFacebook
+      {/* <MetaDataFacebook
         judul={dataGalangDana.data.campaign[0].judul_campaign}
         url={`https://peduly.com/${slug}`}
         detail={dataGalangDana.data.campaign[0].detail_campaign}
@@ -144,7 +130,7 @@ function DetailAktivitas() {
         detail={dataGalangDana.data.campaign[0].detail_campaign}
         foto={`${API_URL}/images/images_campaign/${dataGalangDana.data.campaign[0].foto_campaign}`}
         UserName={`By ${dataGalangDana.data.user[0].name}`}
-      />
+      /> */}
       {popUp && (
         <div
           className="mx-auto w-full h-full fixed z-30"
@@ -163,8 +149,8 @@ function DetailAktivitas() {
           ) : (
             !penggunaanDana && (
               <NavGalangDana
-                slug={slug}
-                judul={dataGalangDana.data.campaign[0].judul_campaign}
+                slug={'aktivitas'}
+                judul={'Open recruitment anggota baru volunteer bach #20'}
                 details={dataGalangDana.data.campaign[0].detail_campaign}
                 donasi={'sekali'}
                 expired={expired}
@@ -539,17 +525,6 @@ function DetailAktivitas() {
                 kabarTerbaru={dataGalangDana.data.kabar_terbaru}
                 donatur={dataGalangDana.data.donatur}
               />
-              {/* <TabDetailsAtas
-                details={dataGalangDana.data.campaign[0].detail_campaign}
-                doaDonatur={dataGalangDana.data.doa_donatur}
-                jumlahDonatur={
-                  dataGalangDana.data.jumlah_donatur.jumlah_donatur
-                }
-                donatur={dataGalangDana.data.donatur}
-              />
-              <TabDetailsBawah
-                kabarTerbaru={dataGalangDana.data.kabar_terbaru}
-              /> */}
             </div>
           </div>
         </div>
@@ -557,7 +532,7 @@ function DetailAktivitas() {
     </div>
   ) : (
     <div className="mx-auto max-w-[430px] h-screen flex items-center justify-center">
-      <Spinner color="#e7513b" />
+      <Spinner color="#0288D1" />
     </div>
   )
 }

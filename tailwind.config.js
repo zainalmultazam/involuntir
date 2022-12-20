@@ -45,6 +45,9 @@ module.exports = {
         /* bg modal */
         'black-transparent': 'rgba(0, 0, 0, .6)',
         'peduly-primary-smtransparent': 'rgba(231, 81, 59, 0.12)',
+        'involuntir-bgicon': 'rgba(2, 136, 209, .12)',
+        'involuntir-light-1/2': 'rgba(228, 228, 228, 0.5)',
+        'involuntir-light-1/3': 'rgba(228, 228, 228, 0.3)',
       },
       borderRadius: {
         small: '10px',

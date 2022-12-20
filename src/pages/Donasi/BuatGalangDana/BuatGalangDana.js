@@ -5,9 +5,69 @@ import DetailKategori from 'components/BuatGalangDana/DetailKategori'
 const data_kategori = [
   {
     kategori: 'Kesehatan dan Medis',
-    ikon: '/icon/hospital.svg',
+    ikon: '/icon/kategori/no-icon.svg',
+    detail:
+      '<p>Galang dana bantuan untuk biaya pengobatan atau perawatan penyakit tertentu.</p>',
+  },
+  {
+    kategori: 'Bantuan Pendidikan',
+    ikon: '/icon/kategori/no-icon.svg',
+    detail:
+      '<p>Galang dana bantuan untuk pendidikan, seperti beasiswa, biaya operasional pendidikan dan pembangunan sekolah.</p>',
+  },
+  {
+    kategori: 'Bencana Alam',
+    ikon: '/icon/kategori/no-icon.svg',
+    detail:
+      '<p>Galang dana bantuan untuk bencana alam Indonesia, seperti bencana gempa atau Tsunami</p>',
+  },
+  {
+    kategori: 'Difabel',
+    ikon: '/icon/kategori/info-circle.svg',
     detail:
       '<p>Galang dana bantuan  kegiatan sosial kepada orang yang membutuhkan. Contoh: bantuan sosial untuk lansia, kegiatan sosial komunitas.</p><br /><p>Contoh penggalangan kegiatan sosial</p>',
+  },
+  {
+    kategori: 'Insfrastruktur Umum',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang dana bantuan  kegiatan sosial kepada orang yang membutuhkan. Contoh: bantuan sosial untuk lansia, kegiatan sosial komunitas.</p><br /><p>Contoh penggalangan kegiatan sosial</p>',
+  },
+  {
+    kategori: 'Karya Kreatif & Modal Usaha',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang dana bantuan  kegiatan sosial kepada orang yang membutuhkan. Contoh: bantuan sosial untuk lansia, kegiatan sosial komunitas.</p><br /><p>Contoh penggalangan kegiatan sosial</p>',
+  },
+  {
+    kategori: 'Kegiatan Sosial',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang Dana bantuan kegiatan sosial kepada orang yang membutuhkan. Contoh: bantuan sosial untuk lansia, kegiatan sosial komunitas.</p><br /><p>Contoh penggalangan kegiatan sosial</p>',
+  },
+  {
+    kategori: 'Kemanusiaan',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang dana bantuan untuk pengungsian akibat konflik sosial atau politik. Khusus organisasi sosial berbadan hukum atau terverifikasi</p>',
+  },
+  {
+    kategori: 'Lingkungan',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang dana bantuan  kegiatan sosial kepada orang yang membutuhkan. Contoh: bantuan sosial untuk lansia, kegiatan sosial komunitas.</p><br /><p>Contoh penggalangan kegiatan sosial</p>',
+  },
+  {
+    kategori: 'Menolong Hewan',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang dana bantuan  kegiatan sosial kepada orang yang membutuhkan. Contoh: bantuan sosial untuk lansia, kegiatan sosial komunitas.</p><br /><p>Contoh penggalangan kegiatan sosial</p>',
+  },
+  {
+    kategori: 'Panti Asuhan',
+    ikon: '/icon/kategori/info-circle.svg',
+    detail:
+      '<p>Galang dana bantuan untuk lembaga panti asuhan, seperti pengadaan logistik dan pembangunan rumah panti asuhan.</p>',
   },
 ]
 

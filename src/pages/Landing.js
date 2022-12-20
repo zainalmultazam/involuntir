@@ -6,6 +6,7 @@ import { Category } from 'components/Landing/Category'
 import Header from 'components/Landing/Header'
 import Point from 'components/Landing/Point'
 import { useEffect } from 'react'
+import { DampakBaik } from 'components/Landing/DampakBaik'
 
 import '../styles/landing.css'
 
@@ -25,7 +26,7 @@ const Landing = () => {
         {/* HEADER */}
         <Header />
         {/* POINT */}
-        <Point />
+        {/* <Point /> */}
         {/* CARD */}
         {/* <MiniCard /> */}
         {/* COROUSEL */}
@@ -36,6 +37,9 @@ const Landing = () => {
         {/* <Urgent /> */}
         {/* KATEGORI */}
         <Category />
+        <hr className="hr-bold my-6" />
+        {/* Dampak baik */}
+        <DampakBaik />
         {/* <hr
           style={{
             marginBottom: '24px',
@@ -44,12 +48,11 @@ const Landing = () => {
         /> */}
         {/* DOA */}
         {/* <Doa /> */}
-        <hr className="hr-bold" style={{ marginBottom: '37px' }} />
         {/* PLAYSTORE */}
-        <Application />
-        <hr className="hr-bold" style={{ marginBottom: '37px' }} />
+        {/* <Application /> */}
+        {/* <hr className="hr-bold" style={{ marginBottom: '37px' }} /> */}
         {/* MEDSOS */}
-        <FindUs />
+        {/* <FindUs /> */}
       </div>
     </div>
   )

@@ -41,43 +41,43 @@
     {
       "id": 1,
       "title": "Panti Asuhan",
-      "imgurl": "/icon/icon/landing-page/panti.svg",
+      "imgurl": "/icon/landing-page/kategori/panti.svg",
       "object": "panti asuhan"
     },
     {
       "id": 2,
       "title": "Beasiswa & Pendidikan",
-      "imgurl": "/icon/icon/landing-page/beasiswa.svg",
+      "imgurl": "/icon/landing-page/kategori/beasiswa.svg",
       "object": "beasiswa_pendidikan"
     },
     {
       "id": 3,
       "title": "Kemanusiaan",
-      "imgurl": "/icon/icon/landing-page/kemanusiaan.svg",
+      "imgurl": "/icon/landing-page/kategori/kemanusiaan.svg",
       "object": "kemanusiaan"
     },
     {
       "id": 4,
       "title": "Kegiatan Sosial",
-      "imgurl": "/icon/icon/landing-page/gift.svg",
+      "imgurl": "/icon/landing-page/kategori/gift.svg",
       "object": "kegiatan sosial"
     },
     {
       "id": 5,
       "title": "Rumah Ibadah",
-      "imgurl": "/icon/icon/landing-page/building.svg",
+      "imgurl": "/icon/landing-page/kategori/building.svg",
       "object": "rumah ibadah"
     },
     {
       "id": 6,
       "title": "Bencana Alam",
-      "imgurl": "/icon/icon/landing-page/bencana-alam.svg",
+      "imgurl": "/icon/landing-page/kategori/bencana-alam.svg",
       "object": "bencana alam"
     },
     {
       "id": 7,
       "title": "Kesehatan & Medis",
-      "imgurl": "/icon/icon/landing-page/hospital.svg",
+      "imgurl": "/icon/landing-page/kategori/hospital.svg",
       "object": "kesehatan_medis"
     }
   ]
