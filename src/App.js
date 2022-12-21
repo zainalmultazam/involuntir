@@ -23,8 +23,6 @@ import riwayatDetail from 'pages/Riwayat/RiwayatDetail'
 import GoogleCallback from 'pages/GoogleCallback'
 import TransaksiFundraiser from './pages/Fundraiser/TransaksiFundraiser'
 import TransaksiFundraiserDetail from './pages/Fundraiser/TransaksiFundraiserDetail'
-import DashboardMerchant from 'pages/Merchant/Dashboard'
-import DetailMerchant from 'pages/Merchant/DetailMerchant'
 import DetailPembayaran from 'pages/Donasi/Sekali/DetailPembayaran'
 import Biaya from 'pages/Donasi/Biaya'
 import TentangKami from 'pages/Profile/TentangKami'
@@ -48,13 +46,10 @@ import AdaYangBaru from 'pages/Profile/AdaYangBaru'
 import InstruksiPembayaranTopUp from 'pages/Profile/TopUp/InstruksiPembayaranTopUp'
 import VerifikasiAkun from 'pages/Profile/Pengaturan/VerifikasiAkun'
 import InstruksiPembayaranRiwayat from 'pages/Riwayat/InstruksiPembayaranRiwayat'
-import Feed from 'pages/Feed/Feed'
 import GalangDanaSupporter from 'pages/Donasi/GalangDanaSupporter/GalangDanaSupporter'
 import DonasiBalanceBerhasil from 'pages/Donasi/Sekali/DonasiBalanceBerhasil'
 import DashboardTopUp from 'pages/Profile/TopUp/DashboardTopUp'
 import PembayaranTopUp from 'pages/Profile/TopUp/PembayaranTopUp'
-import Zakat from 'pages/Zakat/Zakat'
-import KalkulatorZakat from 'pages/Zakat/KalkulatorZakat'
 import Search from 'pages/Search'
 import ProfileDonasi from 'pages/Donasi/Profile/Donasi'
 import Aktivitas from 'pages/Aktivitas/Aktivitas'
@@ -165,10 +160,6 @@ function App() {
           component={TransaksiFundraiserDetail}
         />
 
-        {/* Zakat */}
-        <Route exact path="/zakat" component={Zakat} />
-        <Route exact path="/zakat/kalkulator" component={KalkulatorZakat} />
-
         {/* PROFILE/AKUN */}
         <Route exact path="/profile/:id" component={LihatProfile} />
         <Route exact path="/bantuan" component={Bantuan} />
@@ -229,11 +220,6 @@ function App() {
           component={InstruksiPembayaranRiwayat}
         />
         <Route exact path="/riwayat/detail/:slug" component={riwayatDetail} />
-        {/* FEED */}
-        <Route exact path="/feed" component={Feed} />
-        {/* MERCENT */}
-        <Route exact path="/merchant" component={DashboardMerchant} />
-        <Route exact path="/merchant/detail" component={DetailMerchant} />
 
         {/* 404 */}
 
