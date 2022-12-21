@@ -136,7 +136,7 @@ const NewProfille = () => {
         )}
 
         <div className="mt-8 flex flex-col">
-          <Link to={'/buat-aktivitas'}>
+          <Link to={'/galangdana/create'}>
             <div className="flex py-[18px] pl-6 rounded-full w-full items-center border border-solid border-peduly-light">
               <svg
                 width="24"

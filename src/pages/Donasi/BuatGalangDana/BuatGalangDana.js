@@ -80,7 +80,7 @@ function BuatGalangDana() {
     <>
       {popUp && (
         <div
-          className="absolute h-screen w-screen top-0 left-0 z-50"
+          className="fixed h-screen w-screen top-0 left-0 z-50"
           style={{ background: 'rgb(111, 111, 111, 0.5)' }}
         ></div>
       )}

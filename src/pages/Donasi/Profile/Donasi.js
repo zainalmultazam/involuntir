@@ -2,8 +2,6 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import { useSwipeable } from 'react-swipeable'
-import FormZakatProfesi from 'components/Zakat/FormZakat/FormZakatProfesi'
-import FormZakatMaal from 'components/Zakat/FormZakat/FormZakatMaal'
 import DonasiInvolunter from 'components/DonasiInvolunter/Donasi'
 import DonaturInvolunter from 'components/DonasiInvolunter/Donatur'
 
@@ -52,14 +50,20 @@ export const TabItem = ({ children, width }) => {
 
 const Donasi = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [pilihMetodeActive, setPilihMetodeActive] = useState(false)
   const history = useHistory()
 
   return (
-    <div className="max-w-[430px] mx-auto px-5">
+    <div
+      className={`max-w-[430px] mx-auto px-5`}
+      style={{ marginTop: pilihMetodeActive ? '-78px' : '0' }}
+    >
       <div className=" text-lg font-medium">
         <nav
           style={{ boxShadow: '0px 17px 20px -20px rgba(0, 0, 0, 0.06)' }}
-          className="px-0 pb-[6px] text-[#C4C4C4] fixed top-0 bg-white z-20 w-full max-w-[430px]"
+          className={`px-0 pb-[6px] text-[#C4C4C4] bg-white z-20 w-full max-w-[430px] ${
+            pilihMetodeActive ? 'hidden' : 'fixed top-0'
+          }`}
         >
           <ul className="w-full max-h-[72px] grid grid-cols-2">
             <div onClick={history.goBack} className="fixed">
@@ -110,7 +114,7 @@ const Donasi = () => {
         <TabCarousel activeIndex={activeIndex} setActiveIndex={setActiveIndex}>
           <TabItem>
             <div className={` ${activeIndex === 0 ? '' : 'hidden'} `}>
-              <DonasiInvolunter />
+              <DonasiInvolunter setPilihMetodeActive={setPilihMetodeActive} />
             </div>
           </TabItem>
           <TabItem>
