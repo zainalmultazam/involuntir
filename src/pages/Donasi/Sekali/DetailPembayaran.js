@@ -156,7 +156,7 @@ const DetailPembayaran = () => {
   if (isLoading) {
     return (
       <div className="mx-auto max-w-[430px] h-screen flex items-center justify-center">
-        <Spinner color="#e7513b" />
+        <Spinner color="#0288D1" />
       </div>
     )
   }
@@ -270,12 +270,13 @@ const DetailPembayaran = () => {
           </div>
         </div>
         <div className="rounded-t-[30px] bg-white  w-full relative -top-7 shadow-sm">
-          <div className="flex justify-between pt-[30px] pb-[15px] items-center mx-[40px]">
+          {/* method payment unused */}
+          {/* <div className="flex justify-between pt-[30px] pb-[15px] items-center mx-[40px]">
             <h3 className="text-sm font-normal">{tipePage ? tipePage : ''}</h3>
             <img src={imagePayment} className="h-[15px]" alt="logo" />
-          </div>
+          </div> */}
           {dataTransaksi.metode_pembayaran === 'emoney' ? (
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center pt-8">
               <span>
                 <svg
                   width={79}
@@ -389,7 +390,8 @@ const DetailPembayaran = () => {
           {dataTransaksi.metode_pembayaran === 'emoney' ||
           dataTransaksi.metode_pembayaran === 'transfer_manual' ? (
             <>
-              {dataTransaksi.metode_pembayaran === 'emoney' && (
+              {/* segera buka aplikasi (emoney) */}
+              {/* {dataTransaksi.metode_pembayaran === 'emoney' && (
                 <div
                   className="my-[24px] flex rounded-[15px] px-[20px] py-[19px] mx-[20px]"
                   style={{ backgroundColor: 'rgba(252, 174, 3, 0.12)' }}
@@ -404,21 +406,21 @@ const DetailPembayaran = () => {
                     >
                       <path
                         d="M8.00016 14.6666C11.6668 14.6666 14.6668 11.6666 14.6668 7.99998C14.6668 4.33331 11.6668 1.33331 8.00016 1.33331C4.3335 1.33331 1.3335 4.33331 1.3335 7.99998C1.3335 11.6666 4.3335 14.6666 8.00016 14.6666Z"
-                        stroke="#E7513B"
+                        stroke="#0288D1"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M8 5.33331V8.66665"
-                        stroke="#E7513B"
+                        stroke="#0288D1"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M7.99658 10.6667H8.00257"
-                        stroke="#E7513B"
+                        stroke="#0288D1"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -431,7 +433,7 @@ const DetailPembayaran = () => {
                     scan kode QR di atas.
                   </p>
                 </div>
-              )}
+              )} */}
               {dataTransaksi.metode_pembayaran === 'transfer_manual' && (
                 <div>
                   <p className="text-xs font-light mb-[12px] mx-[30px]">
@@ -451,21 +453,21 @@ const DetailPembayaran = () => {
                       >
                         <path
                           d="M8.00016 14.6666C11.6668 14.6666 14.6668 11.6666 14.6668 7.99998C14.6668 4.33331 11.6668 1.33331 8.00016 1.33331C4.3335 1.33331 1.3335 4.33331 1.3335 7.99998C1.3335 11.6666 4.3335 14.6666 8.00016 14.6666Z"
-                          stroke="#E7513B"
+                          stroke="#0288D1"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
                           d="M8 5.33331V8.66665"
-                          stroke="#E7513B"
+                          stroke="#0288D1"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
                           d="M7.99658 10.6667H8.00257"
-                          stroke="#E7513B"
+                          stroke="#0288D1"
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -485,7 +487,8 @@ const DetailPembayaran = () => {
               *Disarankan melakukan pembayaran dengan uang pas
             </p>
           )}
-          <div className="mx-[20px]">
+          {/* cara pembayaran */}
+          {/* <div className="mx-[20px]">
             <Link
               to={`/donasi-sekali/${slug}/jumlah-donasi/pembayaran/instruksi?idn=${getIdTransaksi()}`}
             >
@@ -493,8 +496,9 @@ const DetailPembayaran = () => {
                 Cara Pembayaran
               </button>
             </Link>
-          </div>
-          {getToken() && (
+          </div> */}
+          {/* cek status pembayaran */}
+          {/* {getToken() && (
             <>
               <hr className="mt-[24px]" />
               <div
@@ -511,8 +515,9 @@ const DetailPembayaran = () => {
               </div>
               <hr className="h-[2px]" />
             </>
-          )}
-          <div className="mx-[20px] space-y-5 mt-[24px]">
+          )} */}
+          {/* donasi terlindungi  */}
+          {/* <div className="mx-[20px] space-y-5 mt-[24px]">
             <div
               className="flex px-[24px] py-[22px] rounded-[15px]"
               style={{ backgroundColor: 'rgba(231, 81, 59, 0.12)' }}
@@ -527,14 +532,14 @@ const DetailPembayaran = () => {
                 >
                   <path
                     d="M27.8796 14.8267C27.8796 21.3467 23.1463 27.4533 16.6796 29.24C16.2396 29.36 15.7596 29.36 15.3196 29.24C8.85295 27.4533 4.11963 21.3467 4.11963 14.8267V8.97332C4.11963 7.87998 4.94632 6.63999 5.97298 6.22665L13.3996 3.1867C15.0663 2.5067 16.9463 2.5067 18.613 3.1867L26.0396 6.22665C27.053 6.63999 27.893 7.87998 27.893 8.97332L27.8796 14.8267Z"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M16.0002 16.6666C17.4729 16.6666 18.6668 15.4727 18.6668 14C18.6668 12.5272 17.4729 11.3333 16.0002 11.3333C14.5274 11.3333 13.3335 12.5272 13.3335 14C13.3335 15.4727 14.5274 16.6666 16.0002 16.6666Z"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeMiterlimit={10}
                     strokeLinecap="round"
@@ -542,7 +547,7 @@ const DetailPembayaran = () => {
                   />
                   <path
                     d="M16 16.6667V20.6667"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeMiterlimit={10}
                     strokeLinecap="round"
@@ -572,35 +577,35 @@ const DetailPembayaran = () => {
                 >
                   <path
                     d="M8 13.3334V10.6667C8 6.25335 9.33333 2.66669 16 2.66669C22.6667 2.66669 24 6.25335 24 10.6667V13.3334"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M22.6665 29.3333H9.33317C3.99984 29.3333 2.6665 28 2.6665 22.6666V20C2.6665 14.6666 3.99984 13.3333 9.33317 13.3333H22.6665C27.9998 13.3333 29.3332 14.6666 29.3332 20V22.6666C29.3332 28 27.9998 29.3333 22.6665 29.3333Z"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M21.3288 21.3334H21.3408"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M15.9938 21.3334H16.0058"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M10.6593 21.3334H10.6713"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -629,7 +634,7 @@ const DetailPembayaran = () => {
                 >
                   <path
                     d="M29.3332 10.6667V17.3333C29.3332 22.6667 26.6665 25.3333 21.3332 25.3333H20.6665C20.2532 25.3333 19.8532 25.5333 19.5998 25.8667L17.5998 28.5333C16.7198 29.7067 15.2798 29.7067 14.3998 28.5333L12.3998 25.8667C12.1865 25.5733 11.6932 25.3333 11.3332 25.3333H10.6665C5.33317 25.3333 2.6665 24 2.6665 17.3333V10.6667C2.6665 5.33332 5.33317 2.66666 10.6665 2.66666H15.9998"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeMiterlimit={10}
                     strokeLinecap="round"
@@ -637,28 +642,28 @@ const DetailPembayaran = () => {
                   />
                   <path
                     d="M20.267 6.15997C19.827 4.83997 20.347 3.21331 21.787 2.75997C22.5336 2.53331 23.467 2.71997 24.0003 3.42664C24.507 2.69331 25.467 2.53331 26.2136 2.75997C27.6536 3.19997 28.1736 4.83997 27.7336 6.15997C27.0536 8.25331 24.667 9.33331 24.0003 9.33331C23.3336 9.33331 20.9736 8.26664 20.267 6.15997Z"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M21.3288 14.6667H21.3408"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M15.9938 14.6667H16.0058"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M10.6593 14.6667H10.6713"
-                    stroke="#E7513B"
+                    stroke="#0288D1"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -672,7 +677,30 @@ const DetailPembayaran = () => {
                 </p>
               </span>
             </div>
-          </div>
+          </div> */}
+          {dataTransaksi.metode_pembayaran === 'emoney' && (
+            <div className="px-5 flex flex-col w-full">
+              <hr className="border-t-[1px] border-solid border-involuntir-light-1/2 mb-6 mt-[34px]" />
+              <h1 className="text-base text-peduly-dark font-bold text-center mb-6">
+                Panduan Pembayaran
+              </h1>
+              <ol type="1" className="list-outside list-decimal ml-5">
+                <li className="text-sm text-peduly-dark font-normal">
+                  Buka Aplikasi Gojek / Shopee / Dana / LinkAja / Mobile Banking
+                  / aplikasi yang mendukung pembayaran QRIS
+                </li>
+                <li className="text-sm text-peduly-dark font-normal">
+                  Scan atau upload QRIS yang sudah kamu download / screenshot
+                </li>
+                <li className="text-sm text-peduly-dark font-normal">
+                  Masukkan pin kamu
+                </li>
+                <li className="text-sm text-peduly-dark font-normal">
+                  Transaksi berhasil
+                </li>
+              </ol>
+            </div>
+          )}
         </div>
       </div>
     </div>
