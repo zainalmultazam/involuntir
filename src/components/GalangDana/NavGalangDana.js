@@ -94,8 +94,8 @@ const NavGalangDana = ({ slug, judul, details, donasi, expired, clk }) => {
           <Link
             to={
               donasi === 'sekali'
-                ? `/donasi-sekali/${slug}/jumlah-donasi`
-                : `/donasi-rutin/${slug}/jumlah-donasi`
+                ? `/donasi-sekali/${slug}/jadi-involuntir`
+                : `/donasi-rutin/${slug}/jadi-involuntir`
             }
           >
             <div className="flex">

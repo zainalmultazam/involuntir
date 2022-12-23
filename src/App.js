@@ -56,6 +56,7 @@ import Aktivitas from 'pages/Aktivitas/Aktivitas'
 import DetailAktivitas from 'pages/Aktivitas/DetailAktivitas'
 import NewProfille from 'pages/Profile/NewProfille'
 import NewPengaturan from 'pages/Profile/Pengaturan/NewPengaturan'
+import JadiInvoluntir from 'pages/Donasi/Sekali/JadiInvoluntir'
 
 function App() {
   useAnalyticsEventTracker()
@@ -114,6 +115,11 @@ function App() {
           exact
           path="/donasi-sekali/:slug/jumlah-donasi"
           component={JumlahDonasi}
+        />
+        <Route
+          exact
+          path="/donasi-sekali/:slug/jadi-involuntir"
+          component={JadiInvoluntir}
         />
         <Route
           exact
